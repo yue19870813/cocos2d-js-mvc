@@ -1,0 +1,38 @@
+{
+    "project_type": "javascript",
+
+    "debugMode" : 1,
+    "showFPS" : true,
+    "frameRate" : 60,
+    "id" : "gameCanvas",
+    "renderMode" : 0,
+    "engineDir":"frameworks/cocos2d-html5",
+
+    "modules" : ["cocos2d"],
+
+    "jsList" : [
+        "src/core/works/Frameworks.js",
+        "src/core/tools/Log.js",
+        "src/core/mvc/Facade.js",
+        "src/core/util/Map.js",
+        "src/core/util/Stack.js",
+        "src/core/mvc/imp/IMediator.js",
+        "src/core/mvc/imp/IModel.js",
+        "src/core/net/SocketManager.js",
+        "src/core/mvc/DirectorMediator.js",
+        "src/core/mvc/SceneMediator.js",
+        "src/core/mvc/LayerMediator.js",
+        "src/core/mvc/Notification.js",
+        "src/core/data/StaticDataUtil.js",
+        "src/core/tools/DateTools.js",
+        "src/core/tools/NumberTools.js",
+        "src/core/tools/ViewTools.js",
+        "src/core/tools/LanguageTools.js",
+        "src/core/loader/LoaderManager.js",
+        "src/core/local/LocalStoreManager.js",
+        "src/core/local/LocalServer.js",
+        "src/core/local/LocalCache.js",
+        "src/resource.js",
+        "src/app.js"
+    ]
+}

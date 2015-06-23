@@ -30,6 +30,19 @@ game.LayerMediator = game.IMediator.extend({
 	freshen:function () {
 		game.log("freshen");
 	},
+	getCurrMediator:function () {
+		var med = game.Facade._directorMediator.currSceneMediator.currLayerMediator;
+		if (med == null) {
+			med = game.Facade._directorMediator.currSceneMediator.rootLayerMediator;
+		}
+		return med;
+	},
+	getRootMediator:function () {
+		return game.Facade._directorMediator.currSceneMediator.rootLayerMediator;
+	},
+	getModel:function () {
+		return game.Facade._modelMap.get(cls);
+	},
 	//私有函数子类不能进行重写
 	_pDispose:function () {
 		var that = this;

@@ -18,10 +18,7 @@ game.Facade._modelMap = null;
 game.Facade.zoom = 1;
 
 //初始化框架
-game.Facade.init = function(isRuntime, netType, size, logTag) {
-	
-	game.Frameworks.IS_RUNTIME = isRuntime;
-	game.Frameworks.NET_TYPE = netType;
+game.Facade.init = function(size, logTag) {
 	
 	game.Facade._directorMediator = new game.DirectorMediator();
 	game.Facade._modelMap = new game.Map();
@@ -46,25 +43,6 @@ game.Facade.registerModel = function (cls, model) {
 	} else {
 		game.Facade._modelMap.put(cls, model);
 	}
-}
-
-//获得当前mediator
-game.Facade.getCurrMediator = function () {
-	var med = game.Facade._directorMediator.currSceneMediator.currLayerMediator;
-	if (med == null) {
-		med = game.Facade._directorMediator.currSceneMediator.rootLayerMediator;
-	}
-	return med;
-}
-
-//获得root mediator
-game.Facade.getRootMediator = function () {
-	return game.Facade._directorMediator.currSceneMediator.rootLayerMediator;
-}
-
-//获取model
-game.Facade.getModel = function (cls) {
-	return game.Facade._modelMap.get(cls);
 }
 
 //切换场景
