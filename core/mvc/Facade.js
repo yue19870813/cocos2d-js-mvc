@@ -1,4 +1,8 @@
-
+/******************************************
+ * The Facade：
+ * 		Control the scene and the layer to show or hide.
+ * create by SunnyYue 2014-11-18
+ ******************************************/
 game.Facade = (function(){
 	var unique;
 	unique = new _Facade();
@@ -11,19 +15,23 @@ function _Facade () {
 
 game.Facade._directorMediator = null;
 
-//数据model集合
+//The model instance map
 game.Facade._modelMap = null;
 
 //zoom
 game.Facade.zoom = 1;
 
-//初始化框架
+/**
+ * Init framework
+ * size:The base window size
+ * logTag:The log's tag
+ */
 game.Facade.init = function(size, logTag) {
 	
 	game.Facade._directorMediator = new game.DirectorMediator();
 	game.Facade._modelMap = new game.Map();
 	
-	//设置缩放比例
+	//set the scaling
 	var winSize = cc.winSize;
 	var zoomX = winSize.width / size.width;
 	var zoomY = winSize.height / size.height;
@@ -34,45 +42,49 @@ game.Facade.init = function(size, logTag) {
 	}
 }
 
-//注册model
+/**
+ * Registe model
+ * size:The base window size
+ * logTag:The log's tag
+ */
 game.Facade.registerModel = function (cls, model) {
 	model.subscribe();
 	var isExist = game.Facade._modelMap.contains(cls);
 	if (isExist) {
-		game.log("已存在的model:" + cls);
+		game.log("Model:" + cls + " have already exists!");
 	} else {
 		game.Facade._modelMap.put(cls, model);
 	}
 }
 
-//切换场景
+//Switch scene
 game.Facade.showScene = function (scene) {
 	game.Facade._directorMediator.showScene(scene);
 	game.Facade._directorMediator.currSceneMediator.showRoot();
 }
 
-//新场景入栈
+//Push new scen into the stack
 game.Facade.pushScene = function (scene) {
 	game.Facade._directorMediator.pushScene(scene);
 	game.Facade._directorMediator.currSceneMediator.showRoot();
 }
 
-//当前场景出栈
+//Pop current scene out of the stack
 game.Facade.popScene = function () {
 	game.Facade._directorMediator.popScene();
 }
 
-//切换Layer
+//Switch layer
 game.Facade.showLayer = function (layer) {
 	game.Facade._directorMediator.currSceneMediator.showLayer(layer);
 }
 
-//切换Layer,入栈
+//Push new layer into the stack
 game.Facade.pushLayer = function (layer) {
 	game.Facade._directorMediator.currSceneMediator.pushLayer(layer);
 }
 
-//当前layer出栈
+//Pop current scene out of the stack
 game.Facade.popLayer = function () {
 	game.Facade._directorMediator.currSceneMediator.popLayer();
 }
