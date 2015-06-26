@@ -1,6 +1,6 @@
 /******************************************
- * 消息注册和通知，观察者：
- * 		发送消息、注册消息等。
+ * Notification ：
+ * 		Send message,subscrib message and so on。
  * create by Yue 2014-11-18
  ******************************************/
 game.Notification = (function(){
@@ -15,12 +15,12 @@ function _Notification () {
 
 game.Notification.callbackList = null;
 
-//初始化消息通知工具类
+//Must be call the init before use it
 game.Notification.init = function () {
 	game.Notification.callbackList = new game.Map();
 }
 
-//注册消息， callback(obj), obj为send时的参数。
+//Subscrib message， callback(obj), obj is the parameter of sender。
 game.Notification.subscrib = function (type, callback) {
 	var isExist = game.Notification.callbackList.contains(type);
 	if (isExist) {
@@ -34,7 +34,7 @@ game.Notification.subscrib = function (type, callback) {
 	}
 }
 
-//移除指定注册
+//Remove subscrib by type and callback.
 game.Notification.unsubscrib = function (type, callback) {
 	var isExist = game.Notification.callbackList.contains(type);
 	if (isExist) {
@@ -50,7 +50,7 @@ game.Notification.unsubscrib = function (type, callback) {
 	return false;
 }
 
-//移除所有指定类型的消息注册
+//Remove all subscrib by type.
 game.Notification.removebByType = function (type) {
 	var isExist = game.Notification.callbackList.contains(type);
 	if (isExist) {
@@ -59,19 +59,19 @@ game.Notification.removebByType = function (type) {
 	return false;
 }
 
-//移除所有注册。
+//Remove all subscrib.
 game.Notification.removeAll = function () {
 	game.Notification.callbackList.clear();
 }
 
-//发送消息， obj将返回给callback(obj)。
+//Send message， obj will be return to callback(obj)。
 game.Notification.send = function (type, obj) {
 	var isExist = game.Notification.callbackList.contains(type);
 	if (isExist) {
 		var arr = game.Notification.callbackList.get(type);
 		for (var i = 0; i < arr.length; i++) {
 			if (arr[i] != undefined && arr[i] != null) {
-				arr[i](obj); //回调给注册点
+				arr[i](obj); 
 			}
 		}
 	} 
