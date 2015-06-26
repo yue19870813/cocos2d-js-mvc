@@ -4,6 +4,6 @@ game.IMediator = cc.Class.extend({
 	},
 	show:function ()
 	{
-		throw new Error("子类未实现subscribe方法.");
+		throw new Error("SubClass not overwrite show function.");
 	}
 });

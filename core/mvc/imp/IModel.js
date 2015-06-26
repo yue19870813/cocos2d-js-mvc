@@ -5,6 +5,6 @@ game.IModel = cc.Class.extend({
 	},
 	subscribe:function ()
 	{
-		throw new Error("子类未实现subscribe方法.");
+		throw new Error("SubClass not overwrite subscribe function.");
 	}
 });
