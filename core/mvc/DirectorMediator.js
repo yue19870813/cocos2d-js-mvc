@@ -1,4 +1,8 @@
-
+/******************************************
+ * The DirectorMediator：
+ * 		Control the scene show or hide.
+ * create by SunnyYue 2014-11-18
+ ******************************************/
 game.DirectorMediator = game.IMediator.extend({
 	sceneMediatorStack:null,
 	currSceneMediator:null,
@@ -8,7 +12,7 @@ game.DirectorMediator = game.IMediator.extend({
 	},
 	show:function (parent) {
 	},
-	//打开新场景，销毁上一个场景。
+	//Open the new scene and destroy the previous.
 	showScene:function (mediator) {
 		if (this.currSceneMediator && this.currSceneMediator.rootLayerMediator) {
 			this.currSceneMediator.rootLayerMediator._pDispose();
@@ -29,13 +33,13 @@ game.DirectorMediator = game.IMediator.extend({
 		this.sceneMediatorStack.push(mediator);
 		cc.director.runScene(mediator.currScene);
 	},
-	//打开新场景，将上一个场景入栈保存。
+	//Open the new scene and push the previous into the stack
 	pushScene:function (mediator) {
 		this.currSceneMediator = mediator;
 		this.sceneMediatorStack.push(mediator);
 		cc.director.pushScene(mediator.currScene);
 	},
-	//弹出当前场景销毁，进入上一个保存的场景。
+	//Pop the current scene to destroy then go to the previous scene.
 	popScene:function () {
 		var pop = this.sceneMediatorStack.pop();
 		var curr = this.sceneMediatorStack.top();

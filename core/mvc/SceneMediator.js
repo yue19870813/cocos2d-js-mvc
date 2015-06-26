@@ -1,6 +1,10 @@
-
+/******************************************
+ * The SceneMediator：
+ * 		Control the layer show or hide.
+ * create by SunnyYue 2014-11-18
+ ******************************************/
 game.SceneMediator = game.IMediator.extend({
-	currScene:null,		//当前场景
+	currScene:null,		
 	currLayerMediator:null,
 	rootLayerMediator:null,
 	layerMediatorList:null,
@@ -18,26 +22,26 @@ game.SceneMediator = game.IMediator.extend({
 			this.currLayerMediator.show(this.currScene);
 		}
 	},
-	//设置根层
+	//Setting the root layer
 	rootLayer:function (layer) {
 		this.rootLayerMediator = layer;
 	},
 	showRoot:function () {
 		this.show();
 	},
-	//打开新layer，销毁上一个layer。
+	//Open the new layer and destroy previous  layer.
 	showLayer:function (layer) {
 		this.currLayerMediator = layer;
 		this.layerMediatorList = new game.Stack();
 		this.layerMediatorList.push(layer);
 	},
-	//打开新layer，将上一个layer入栈保存。
+	//Open the new layer and push the previous layer into stack.
 	pushLayer:function (layer) {
 		this.currLayerMediator = layer;
 		this.layerMediatorList.push(layer);
 		this.show();
 	},
-	//弹出当前layer销毁，进入上一个保存的layer。
+	//Pop the current layer to destroy then go to the previous layer.
 	popLayer:function () {
 		var layer = this.layerMediatorList.pop();
 		layer && layer._pDispose();
