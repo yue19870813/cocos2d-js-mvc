@@ -1,7 +1,10 @@
-/******************************************
- * 静态数据工具类：
- * create by Yue 2014-11-24
- ******************************************/
+/********************************************************************************
+  The game.StaticDataUtil
+  @author ituuz 
+  @date 2014-11-24
+  
+  The static data utils, to load data and offer get function to user.
+********************************************************************************/
 game.StaticDataUtil = (function(){
 	var unique;
 	unique = new _StaticDataUtile();
@@ -44,7 +47,7 @@ game.StaticDataUtil.add = function (key, str) {
 }
 
 /**
- * 根据key和id获取数据对象
+ * Get data object by key and id.
  * @return Object
  */
 game.StaticDataUtil.getObjById = function (key, id) {
@@ -61,24 +64,12 @@ game.StaticDataUtil.getObjById = function (key, id) {
 }
 
 /**
- * 根据key获取数据对象集合
+ * Get data list by key
  * @return Array
  */
 game.StaticDataUtil.getObjsByKey = function (key) {
 	return game.StaticDataUtil._dataMap.get(key);
 }
 
-/**
- * 根据技能组件id和技能等级获取技能数据
- */
-game.StaticDataUtil.getSkillDataByGroupIdAndLv = function(groupId,level){
-	var skills = game.StaticDataUtil.getObjsByKey(game.Skill_data);
-	var skillVO = null;
-	for(var i=0;i<skills.length;i++){
-		skillVO = skills[i];
-		if(skillVO.group == groupId && skillVO.level == level) break;
-	}
-	return skillVO;
-}
 
 
