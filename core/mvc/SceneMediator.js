@@ -1,8 +1,10 @@
-/******************************************
- * The SceneMediator：
- * 		Control the layer show or hide.
- * create by SunnyYue 2014-11-18
- ******************************************/
+/********************************************************************************
+  The SceneMediator
+  @author ituuz 
+  @date 2014-11-18
+  
+  Control the layer show or hide.
+********************************************************************************/
 game.SceneMediator = game.IMediator.extend({
 	currScene:null,		
 	currLayerMediator:null,

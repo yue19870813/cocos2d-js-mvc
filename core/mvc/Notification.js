@@ -1,8 +1,10 @@
-/******************************************
- * Notification ：
- * 		Send message,subscrib message and so on。
- * create by Yue 2014-11-18
- ******************************************/
+/********************************************************************************
+  The Notification
+  @author ituuz 
+  @date 2014-11-18
+  
+  Send message,subscrib message and so on.
+********************************************************************************/
 game.Notification = (function(){
 	var unique;
 	unique = new _Notification();

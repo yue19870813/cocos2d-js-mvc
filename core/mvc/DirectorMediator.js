@@ -1,8 +1,10 @@
-/******************************************
- * The DirectorMediator：
- * 		Control the scene show or hide.
- * create by SunnyYue 2014-11-18
- ******************************************/
+/********************************************************************************
+  The DirectorMediator
+  @author ituuz 
+  @date 2014-11-18
+  
+  Control the scene show or hide.
+********************************************************************************/
 game.DirectorMediator = game.IMediator.extend({
 	sceneMediatorStack:null,
 	currSceneMediator:null,

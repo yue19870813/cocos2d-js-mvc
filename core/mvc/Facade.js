@@ -1,8 +1,10 @@
-/******************************************
- * The Facade：
- * 		Control the scene and the layer to show or hide.
- * create by SunnyYue 2014-11-18
- ******************************************/
+/********************************************************************************
+  The Facade
+  @author ituuz 
+  @date 2014-11-18
+  
+  Control the scene and the layer to show or hide.
+********************************************************************************/
 game.Facade = (function(){
 	var unique;
 	unique = new _Facade();

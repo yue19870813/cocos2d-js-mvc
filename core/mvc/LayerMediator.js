@@ -1,8 +1,10 @@
-/******************************************
- * The LayerMediator：
- * 		The layer's logic.
- * create by SunnyYue 2014-11-18
- ******************************************/
+/********************************************************************************
+  The LayerMediator
+  @author ituuz 
+  @date 2014-11-18
+  
+  The layer's logic.
+********************************************************************************/
 game.LayerMediator = game.IMediator.extend({
 	currView:null,
 	backBtn:null,
