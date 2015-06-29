@@ -1,13 +1,16 @@
-/******************************************
- * 自定义 Map 数据结构
- * create by Yue 2014-11-13
- ******************************************/
+/********************************************************************************
+  game.Map
+  @author ituuz 
+  @date 2014-11-13
+  
+  The Map.
+********************************************************************************/
 game.Map = cc.Class.extend({
 	elements:null,
 	ctor:function () {
 		this.elements = new Array();
 	},
-	//插入元素
+	//Insert element.
 	put:function(_key, _value) {
 		var isExist = this.contains(_key);
 		if (isExist) {
@@ -18,7 +21,7 @@ game.Map = cc.Class.extend({
 			value : _value
 		});
 	},
-	//获得元素
+	//Get element.
 	get:function(_key) {
 		try {
 			for (i = 0; i < this.elements.length; i++) {
@@ -30,7 +33,7 @@ game.Map = cc.Class.extend({
 			return null;
 		}
 	},
-	//删除元素
+	//Delete element.
 	remove:function(_key) {
 		var bln = false;
 		try {
@@ -45,7 +48,7 @@ game.Map = cc.Class.extend({
 		}
 		return bln;
 	},
-	//判断MAP中是否含有指定KEY的元素
+	//To estimate whether the map contains element that specify key.
 	contains:function(_key) {
 		var bln = false;
 		try {
@@ -59,15 +62,15 @@ game.Map = cc.Class.extend({
 		}
 		return bln;
 	},
-	//获取MAP元素个数
+	//Get the map size.
 	size:function() {
 		return this.elements.length;
 	},
-	//判断MAP是否为空
+	//To estimate whether the map is null.
 	isEmpty:function() {
 		return (this.elements.length < 1);
 	},
-	//删除MAP所有元素
+	//Remove all the elements.
 	clear:function() {
 		this.elements = new Array();
 	}
