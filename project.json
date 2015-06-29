@@ -18,6 +18,8 @@
         "src/core/util/Stack.js",
         "src/core/mvc/imp/IMediator.js",
         "src/core/mvc/imp/IModel.js",
+	"src/core/mvc/imp/IView.js",
+        "src/core/mvc/imp/IScene.js",
         "src/core/net/SocketManager.js",
         "src/core/mvc/DirectorMediator.js",
         "src/core/mvc/SceneMediator.js",
