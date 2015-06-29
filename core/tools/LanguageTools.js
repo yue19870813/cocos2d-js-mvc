@@ -10,9 +10,11 @@ game.LanguageTools = {}
  */
 game.LanguageTools.getWords = function (key) {
 	var lvo = game.StaticDataUtil.getObjById(game.Language, key);	
-	var str = "请填表：" + key;
+	var str;
 	if (lvo) {
 		str = lvo.value;
+	} else {
+		str = "Non-existent:" + key;
 	}
 	//正则 替换全部
 	str = str.replace(/#\$d/g, ",");
@@ -29,9 +31,11 @@ game.LanguageTools.getWords = function (key) {
  */
 game.LanguageTools.getDynWords = function (key, param) {
 	var lvo = game.StaticDataUtil.getObjById(game.Language, key);	
-	var str = "请填表：" + key;
+	var str;
 	if (lvo) {
 		str = lvo.value;
+	} else {
+		str = "Non-existent:" + key;
 	}
 	for (var i = 0; i < param.length; i++) {
 		str = str.replace("#"+ (i + 1) +"#", param[i]);

@@ -1,7 +1,10 @@
-/**
- * 
- * 
- * */
+/********************************************************************************
+  The game.NumberTools
+  @author ituuz 
+  @date 2014-11-24
+  
+  The number tools include copare two numbers.
+********************************************************************************/
 game.NumberTools = {};
 
 game.NumberTools.min = function (a, b) {
