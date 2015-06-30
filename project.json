@@ -28,7 +28,6 @@
         "src/core/data/StaticDataUtil.js",
         "src/core/tools/DateTools.js",
         "src/core/tools/NumberTools.js",
-        "src/core/tools/ViewTools.js",
         "src/core/tools/LanguageTools.js",
         "src/core/loader/LoaderManager.js",
         "src/core/local/LocalStoreManager.js",

@@ -1,4 +1,10 @@
-
+/********************************************************************************
+  The game.LocalStoreManager
+  @author ituuz 
+  @date 2015-4-29
+  
+  Save the game data into loacalstore.
+ ********************************************************************************/
 game.LocalStoreManager = {};
 
 game.LocalStoreManager.serverHandlerMap = null;
