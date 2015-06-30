@@ -14,7 +14,7 @@ game.LocalCache.init = function (keyType, value) {
 	} else {
 		game.LocalCache.sKey = "game";
 	}
-	//从本地数据获取数据cc.sys.OS_WINDOWS != cc.sys.os
+	//cc.sys.OS_WINDOWS != cc.sys.os
 	var str = "";
 	if (!cc.sys.isMobile || game.Frameworks.IS_RUNTIME) {
 		str = cc.sys.localStorage.getItem(game.LocalCache.sKey);

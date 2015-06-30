@@ -21,13 +21,11 @@ game.LocalStoreManager.init = function (localDataType, value) {
 	}
 }
 
-//注册协议处理函数
-//pid:协议号 handlerName:协议处理类名
+//pid:protocol id, handlerName:protocol handle name
 game.LocalStoreManager.registServerHandler = function (pid, handlerName) {
 	game.LocalStoreManager.serverHandlerMap.put(pid, handlerName);
 }
 
-//请求处理
 game.LocalStoreManager.requestHandler = function (obj) {
 	var pid = obj.pid;
 	var handlerName = game.LocalStoreManager.serverHandlerMap.get(pid);
@@ -35,17 +33,14 @@ game.LocalStoreManager.requestHandler = function (obj) {
 	serverHandler.execute(obj);
 }
 
-//保存数据
 game.LocalStoreManager.setItem = function (key, value) {
 	game.LocalCache.setItem(key, value);
 }
 
-//获取数据
 game.LocalStoreManager.getItem = function (key) {
 	return game.LocalCache.getItem(key);
 }
 
-//删除数据
 game.LocalStoreManager.deleteItem = function (key) {
 	var gameObj = cc.sys.localStorage.getItem(game.LocalStoreManager.sKey);
 	gameObj[key] = null;
