@@ -1,13 +1,17 @@
-/**
- * 日期工具类
- */
+/********************************************************************************
+  The game.DataTools
+  @author ituuz 
+  @date 2015-6-29
+  
+  IView is the view of MVC, create your scene view to extend this class. 
+ ********************************************************************************/
 game.DataTools = {};
 
 /**
- * 获得当前日期 
+ * Get current date. 
  * @returns {String} yyyy-mm-dd
  */
-//时间戳是1900，月（0~11）
+//1900, month（0~11）
 game.DataTools.getCurrData = function () {
 	var myDate = new Date();
 	var yy = myDate.getYear() + 1900;  
@@ -18,8 +22,8 @@ game.DataTools.getCurrData = function () {
 }
 
 /**
- * 获得当前月份
- * @returns {Number} 月份
+ * Get current month
+ * @returns {Number} month
  */
 game.DataTools.getCurrMonth = function () {
 	var myDate = new Date();
@@ -27,9 +31,9 @@ game.DataTools.getCurrMonth = function () {
 }
 
 /**
- * 获得指定月份天数
- * @param month	月份
- * @returns {Number} 天数
+ * Get specify month's days
+ * @param month	month
+ * @returns {Number} days
  */
 game.DataTools.getDaysByMonth = function (month) {
 	var myDate = new Date();
@@ -53,8 +57,8 @@ game.DataTools.getDaysByMonth = function (month) {
 }
 
 /**
- * 获得当前月份天数
- * @returns	{Number} 天数
+ * Get current month's days
+ * @returns	{Number} days
  */
 game.DataTools.getCurrMonthDays = function () {
 	return game.DataTools.getDaysByMonth(game.DataTools.getCurrMonth());
