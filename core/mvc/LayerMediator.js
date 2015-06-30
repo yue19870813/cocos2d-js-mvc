@@ -13,7 +13,7 @@ game.LayerMediator = game.IMediator.extend({
 	ctor:function (view) {
 		this.currView = view;
 	},
-	show:function (parent) {
+	show:function (parent, obj) {
 		if (this.isRoot) return;	
 		var size = cc.winSize;
 		this.mask = new cc.LayerColor(cc.color(0,0,0,200), size.width, size.height);
@@ -31,7 +31,7 @@ game.LayerMediator = game.IMediator.extend({
 	init:function () {
 		throw new Error("SubClass must be overwrite init function and regist event in this function.");
 	},
-	freshen:function () {
+	freshen:function (obj) {
 		game.log("freshen");
 	},
 	getCurrMediator:function () {

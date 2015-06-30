@@ -77,18 +77,18 @@ game.Facade.popScene = function () {
 }
 
 //Switch layer
-game.Facade.showLayer = function (layer) {
-	game.Facade._directorMediator.currSceneMediator.showLayer(layer);
+game.Facade.showLayer = function (layer, obj) {
+	game.Facade._directorMediator.currSceneMediator.showLayer(layer, obj);
 }
 
 //Push new layer into the stack
-game.Facade.pushLayer = function (layer) {
-	game.Facade._directorMediator.currSceneMediator.pushLayer(layer);
+game.Facade.pushLayer = function (layer, obj) {
+	game.Facade._directorMediator.currSceneMediator.pushLayer(layer, obj);
 }
 
 //Pop current scene out of the stack
-game.Facade.popLayer = function () {
-	game.Facade._directorMediator.currSceneMediator.popLayer();
+game.Facade.popLayer = function (obj) {
+	game.Facade._directorMediator.currSceneMediator.popLayer(obj);
 }
 
 
