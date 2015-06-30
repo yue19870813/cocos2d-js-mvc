@@ -1,12 +1,16 @@
-/**
- * 语言工具类
- */
+/********************************************************************************
+  The game.LanguageTools
+  @author ituuz 
+  @date 2014-11-26
+  
+  Static data language utils. It can get string from file to show in UI. 
+********************************************************************************/
 game.LanguageTools = {}
 
 /**
- * 根据key获取字符串
- * @param key 字符串id
- * @returns {String} 返回最终字符串
+ * Get string by key.
+ * @param key string key
+ * @returns {String} String from file data.
  */
 game.LanguageTools.getWords = function (key) {
 	var lvo = game.StaticDataUtil.getObjById(game.Language, key);	
@@ -16,7 +20,6 @@ game.LanguageTools.getWords = function (key) {
 	} else {
 		str = "Non-existent:" + key;
 	}
-	//正则 替换全部
 	str = str.replace(/#\$d/g, ",");
 	str = str.replace(/#\$y/g,"\"");
 	str = str.replace(/#\$h/g,"\n");
@@ -24,10 +27,10 @@ game.LanguageTools.getWords = function (key) {
 }
 
 /**
- * 获取动态字符串
- * @param key 字符串id
- * @param param	动态参数 ["param1", "param2"] 会按顺序替换动态内容。
- * @returns {String} 返回最终字符串
+ * Get dynamic string by key
+ * @param key:string key
+ * @param param:dynamic param ["param1", "param2"] It can be replace param by seqence.
+ * @returns {String} String from file data.
  */
 game.LanguageTools.getDynWords = function (key, param) {
 	var lvo = game.StaticDataUtil.getObjById(game.Language, key);	
@@ -40,7 +43,6 @@ game.LanguageTools.getDynWords = function (key, param) {
 	for (var i = 0; i < param.length; i++) {
 		str = str.replace("#"+ (i + 1) +"#", param[i]);
 	}
-	//正则 替换全部
 	str = str.replace(/#\$d/g, ",");
 	str = str.replace(/#\$y/g,"\"");
 	str = str.replace(/#\$h/g,"\n");

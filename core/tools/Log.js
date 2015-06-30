@@ -1,8 +1,10 @@
-/******************************************
- * log输出工具类
- * 		游戏内打印调试信息使用该类，方便后期调试
- * create by Yue 2014-11-26
- ******************************************/
+/********************************************************************************
+  The game.log
+  @author ituuz 
+  @date 2014-11-26
+  
+  Print game log.It's can help us to debug by log. 
+********************************************************************************/
 
 game._Log = {};
 
@@ -10,7 +12,6 @@ game._Log.debugArray = [];
 
 game._Log.tagArray = [];
 
-//游戏内打印调试信息
 game.log = function (text, tag) {
 	if (tag == "RELEASE") return;
 	if (tag == undefined && game.Frameworks.LOG_TAG == "DEBUG") {
@@ -22,7 +23,7 @@ game.log = function (text, tag) {
 	}
 }
 
-//将日志输出到文件
+//Create file with log.
 game.createLogFile = function (tag) {
 	var str = "";
 	if (tag == undefined) {
