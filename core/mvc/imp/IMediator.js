@@ -25,5 +25,8 @@ game.IMediator = cc.Class.extend({
 	},
 	getModel:function (cls) {
 		return game.Facade._modelMap.get(cls);
+	},
+	getFacade:function () {
+		return game.Facade;
 	}
 });
