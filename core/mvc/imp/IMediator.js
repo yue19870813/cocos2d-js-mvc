@@ -26,7 +26,9 @@ game.IMediator = cc.Class.extend({
 	getModel:function (cls) {
 		return game.Facade._modelMap.get(cls);
 	},
-	getFacade:function () {
-		return game.Facade;
+	//Use this function to send notification.
+	send:function (key, obj)
+	{
+		game.Notification.send(key, obj);
 	}
 });
