@@ -59,36 +59,3 @@ game.Facade.registerModel = function (cls, model) {
 	}
 }
 
-//Switch scene
-game.Facade.showScene = function (scene) {
-	game.Facade._directorMediator.showScene(scene);
-	game.Facade._directorMediator.currSceneMediator.showRoot();
-}
-
-//Push new scen into the stack
-game.Facade.pushScene = function (scene) {
-	game.Facade._directorMediator.pushScene(scene);
-	game.Facade._directorMediator.currSceneMediator.showRoot();
-}
-
-//Pop current scene out of the stack
-game.Facade.popScene = function () {
-	game.Facade._directorMediator.popScene();
-}
-
-//Switch layer
-game.Facade.showLayer = function (layer, obj) {
-	game.Facade._directorMediator.currSceneMediator.showLayer(layer, obj);
-}
-
-//Push new layer into the stack
-game.Facade.pushLayer = function (layer, obj) {
-	game.Facade._directorMediator.currSceneMediator.pushLayer(layer, obj);
-}
-
-//Pop current scene out of the stack
-game.Facade.popLayer = function (obj) {
-	game.Facade._directorMediator.currSceneMediator.popLayer(obj);
-}
-
-
