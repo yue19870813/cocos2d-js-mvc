@@ -13,5 +13,10 @@ game.IModel = cc.Class.extend({
 	subscribe:function ()
 	{
 		throw new Error("SubClass not overwrite subscribe function.");
+	},
+	//Use this function to send notification.
+	send:function (key, obj)
+	{
+		game.Notification.send(key, obj);
 	}
 });
