@@ -21,7 +21,7 @@ game.IMediator = cc.Class.extend({
 		return med;
 	},
 	getRootMediator:function () {
-		return game.Facade._directorMediator.currSceneMediator.rootLayerMediator;;
+		return game.Facade._directorMediator.currSceneMediator.rootLayerMediator;
 	},
 	getModel:function (cls) {
 		return game.Facade._modelMap.get(cls);
