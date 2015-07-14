@@ -27,8 +27,9 @@ game.Facade.zoom = 1;
  * Init framework
  * size:The base window size
  * logTag:The log's tag
+ * sceneMed:first scene mediator
  */
-game.Facade.init = function(size, logTag) {
+game.Facade.init = function(size, logTag, sceneMed) {
 	
 	game.Facade._directorMediator = new game.DirectorMediator();
 	game.Facade._modelMap = new game.Map();
@@ -42,6 +43,9 @@ game.Facade.init = function(size, logTag) {
 	if (undefined != logTag) {
 		game.Frameworks.LOG_TAG = logTag;
 	}
+	//Init first scene mediator.
+	game.Facade._directorMediator.showScene(sceneMed);
+	game.Facade._directorMediator.currSceneMediator.showRoot();
 }
 
 /**
