@@ -48,12 +48,12 @@ game.LayerMediator = game.IMediator.extend({
 		return game.Facade._modelMap.get(cls);
 	},	
 	//Switch scene
-	showScene:function (scene) {
+	showScene:function (sceneMed) {
 		game.Facade._directorMediator.showScene(scene);
 		game.Facade._directorMediator.currSceneMediator.showRoot();
 	},
 	//Push new scen into the stack
-	pushScene:function (scene) {
+	pushScene:function (sceneMed) {
 		game.Facade._directorMediator.pushScene(scene);
 		game.Facade._directorMediator.currSceneMediator.showRoot();
 	},
@@ -62,11 +62,11 @@ game.LayerMediator = game.IMediator.extend({
 		game.Facade._directorMediator.popScene();
 	},
 	//Switch layer
-	showLayer:function (layer, obj) {
+	showLayer:function (layerMed, obj) {
 		game.Facade._directorMediator.currSceneMediator.showLayer(layer, obj);
 	},
 	//Push new layer into the stack
-	pushLayer:function (layer, obj) {
+	pushLayer:function (layerMed, obj) {
 		game.Facade._directorMediator.currSceneMediator.pushLayer(layer, obj);
 	},
 	//Pop current scene out of the stack

@@ -25,21 +25,21 @@ game.SceneMediator = game.IMediator.extend({
 		}
 	},
 	//Setting the root layer
-	rootLayer:function (layer) {
+	rootLayer:function (layerMed) {
 		this.rootLayerMediator = layer;
 	},
 	showRoot:function () {
 		this.show();
 	},
 	//Open the new layer and destroy previous  layer.
-	showLayer:function (layer, obj) {
+	showLayer:function (layerMed, obj) {
 		this.currLayerMediator = layer;
 		this.layerMediatorList = new game.Stack();
 		this.layerMediatorList.push(layer);
 		this.show(obj);
 	},
 	//Open the new layer and push the previous layer into stack.
-	pushLayer:function (layer, obj) {
+	pushLayer:function (layerMed, obj) {
 		this.currLayerMediator = layer;
 		this.layerMediatorList.push(layer);
 		this.show(obj);
