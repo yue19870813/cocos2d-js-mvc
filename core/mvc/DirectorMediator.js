@@ -19,15 +19,11 @@ game.DirectorMediator = game.IMediator.extend({
 		if (this.currSceneMediator && this.currSceneMediator.rootLayerMediator) {
 			this.currSceneMediator.rootLayerMediator._pDispose();
 		}
-		if (this.currSceneMediator && this.currSceneMediator.currLayerMediator) {
-			this.currSceneMediator.currLayerMediator._pDispose();
-		}
 		if (this.currSceneMediator) {
 			var layMedList = this.currSceneMediator.layerMediatorList;
-			for (var i = 0; i < layMedList.length; i++) {
-				if (layMedList[i]) {
-					layMedList[i]._pDispose();
-				}
+			while (layMedList.size() > 0) {
+				var med = layMedList.pop();
+				med._pDispose();
 			}
 		}
 		this.currSceneMediator = mediator;

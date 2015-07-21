@@ -5,6 +5,10 @@
   
   Control the scene and the layer to show or hide.
 ********************************************************************************/
+
+var game = game || {};
+var server = server || {};
+
 game.Facade = (function(){
 	var unique;
 	unique = new _Facade();
@@ -12,7 +16,7 @@ game.Facade = (function(){
 })();
 
 function _Facade () {
-	game.log("Facade init.");
+	cc.log("Facade init.");
 }
 
 game.Facade._directorMediator = null;
@@ -30,7 +34,8 @@ game.Facade.zoom = 1;
  * sceneMed:first scene mediator
  */
 game.Facade.init = function(size, logTag, sceneMed) {
-	
+
+	game.Notification.init();
 	game.Facade._directorMediator = new game.DirectorMediator();
 	game.Facade._modelMap = new game.Map();
 	
@@ -54,12 +59,12 @@ game.Facade.init = function(size, logTag, sceneMed) {
  * logTag:The log's tag
  */
 game.Facade.registerModel = function (cls, model) {
-	model.subscribe();
+	model.init();
 	var isExist = game.Facade._modelMap.contains(cls);
 	if (isExist) {
-		game.log("Model:" + cls + " have already exists!");
+		cc.log("Model:" + cls + " have already exists!");
 	} else {
-		game.Facade._modelMap.put(cls, model);
+		cc.Facade._modelMap.put(cls, model);
 	}
 }
 

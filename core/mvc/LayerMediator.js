@@ -32,7 +32,18 @@ game.LayerMediator = game.IMediator.extend({
 		throw new Error("SubClass must be overwrite init function and regist event in this function.");
 	},
 	freshen:function (obj) {
-		game.log("freshen");
+		cc.log("freshen");
+	},
+	//Use this function to send notification.
+	send:function (key, obj)
+	{
+		game.Notification.send(key, obj);
+	},
+	subscrib:function (type, callback, target) {
+		game.Notification.subscrib(type, callback, target);
+	},
+	unsubscrib:function () {
+		game.Notification.unsubscrib(type, callback);
 	},
 	getCurrMediator:function () {
 		var med = game.Facade._directorMediator.currSceneMediator.currLayerMediator;
@@ -44,7 +55,7 @@ game.LayerMediator = game.IMediator.extend({
 	getRootMediator:function () {
 		return game.Facade._directorMediator.currSceneMediator.rootLayerMediator;
 	},
-	getModel:function () {
+	getModel:function (cls) {
 		return game.Facade._modelMap.get(cls);
 	},	
 	//Switch scene

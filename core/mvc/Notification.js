@@ -12,7 +12,7 @@ game.Notification = (function(){
 })();
 
 function _Notification () {
-	game.log("Notification init.");
+	cc.log("Notification init.");
 }
 
 game.Notification.callbackList = null;
@@ -23,14 +23,14 @@ game.Notification.init = function () {
 }
 
 //Subscrib message， callback(obj), obj is the parameter of sender。
-game.Notification.subscrib = function (type, callback) {
+game.Notification.subscrib = function (type, callback, target) {
 	var isExist = game.Notification.callbackList.contains(type);
 	if (isExist) {
 		var arr = game.Notification.callbackList.get(type);
 		arr.push(callback);
 	} else {
 		var arr = new Array();
-		arr.push(callback);
+		arr.push([callback, target]);
 		game.Notification.callbackList.put(type, arr);
 		
 	}
@@ -73,7 +73,7 @@ game.Notification.send = function (type, obj) {
 		var arr = game.Notification.callbackList.get(type);
 		for (var i = 0; i < arr.length; i++) {
 			if (arr[i] != undefined && arr[i] != null) {
-				arr[i](obj); 
+				arr[i][0](obj, arr[i][1]);
 			}
 		}
 	} 

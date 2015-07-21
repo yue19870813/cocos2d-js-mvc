@@ -6,8 +6,6 @@
   The framework's summary.
 ********************************************************************************/
 
-var game = game || {};
-var server = server || {};
 
 game.Frameworks = {
 		DEBUG:false,
@@ -16,4 +14,9 @@ game.Frameworks = {
 		NET_TYPE:1,		
 		DESIGN_ZOOM:1,	
 		DEVICE_ID:"DEVICE_ID"	
+}
+
+//init frameworks
+game.Frameworks.init = function (size, logTag, sceneMed) {
+	game.Facade.init(size, logTag, sceneMed);
 }
