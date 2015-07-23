@@ -64,7 +64,7 @@ game.Facade.registerModel = function (cls, model) {
 	if (isExist) {
 		cc.log("Model:" + cls + " have already exists!");
 	} else {
-		cc.Facade._modelMap.put(cls, model);
+		game.Facade._modelMap.put(cls, model);
 	}
 }
 

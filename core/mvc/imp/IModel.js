@@ -22,7 +22,7 @@ game.IModel = cc.Class.extend({
 	subscrib:function (type, callback, target) {
 		game.Notification.subscribe(type, callback, target);
 	},
-	unsubscrib:function () {
+	unsubscrib:function (type, callback) {
 		game.Notification.unsubscrib(type, callback);
 	}
 });

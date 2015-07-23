@@ -30,7 +30,7 @@ game.SocketManager.init = function(addr, errorCallback) {
 	game.SocketManager._address = addr;
 	game.SocketManager._error = errorCallback;
 	game.SocketManager._callbackMap = new game.Map();
-	game.ocketManager._isInit = true;
+	game.SocketManager._isInit = true;
 }
 
 //Register the server callback.
