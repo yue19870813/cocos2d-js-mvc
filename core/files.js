@@ -1,3 +1,22 @@
 var jsFiles = [			  
-				
+				"src/core/mvc/Facade.js",
+				"src/core/works/Frameworks.js",
+				"src/core/util/Map.js",
+				"src/core/util/Stack.js",
+				"src/core/mvc/Notification.js",
+				"src/core/mvc/imp/IMediator.js",
+				"src/core/mvc/imp/IModel.js",
+				"src/core/mvc/imp/IScene.js",
+				"src/core/mvc/imp/IView.js",
+				"src/core/net/SocketManager.js",
+				"src/core/mvc/DirectorMediator.js",
+				"src/core/mvc/SceneMediator.js",
+				"src/core/mvc/LayerMediator.js",
+				"src/core/data/StaticDataUtil.js",
+				"src/core/tools/DateTools.js",
+				"src/core/tools/NumberTools.js",
+				"src/core/tools/LanguageTools.js",
+				"src/core/tools/Log.js",
+				"src/core/tools/UIHelper.js",
+				"src/core/loader/LoaderManager.js"
                ];
