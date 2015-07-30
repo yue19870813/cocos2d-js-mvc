@@ -42,7 +42,7 @@ game.LayerMediator = game.IMediator.extend({
 	subscrib:function (type, callback, target) {
 		game.Notification.subscrib(type, callback, target);
 	},
-	unsubscrib:function () {
+	unsubscrib:function (type, callback) {
 		game.Notification.unsubscrib(type, callback);
 	},
 	getCurrMediator:function () {
