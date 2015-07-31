@@ -18,11 +18,5 @@ game.IModel = cc.Class.extend({
 	send:function (key, obj)
 	{
 		game.Notification.send(key, obj);
-	},
-	subscrib:function (type, callback, target) {
-		game.Notification.subscribe(type, callback, target);
-	},
-	unsubscrib:function (type, callback) {
-		game.Notification.unsubscrib(type, callback);
 	}
 });
