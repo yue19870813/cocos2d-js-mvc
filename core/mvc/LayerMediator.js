@@ -45,19 +45,6 @@ game.LayerMediator = game.IMediator.extend({
 	unsubscrib:function (type, callback) {
 		game.Notification.unsubscrib(type, callback);
 	},
-	getCurrMediator:function () {
-		var med = game.Facade._directorMediator.currSceneMediator.currLayerMediator;
-		if (med == null) {
-			med = game.Facade._directorMediator.currSceneMediator.rootLayerMediator;
-		}
-		return med;
-	},
-	getRootMediator:function () {
-		return game.Facade._directorMediator.currSceneMediator.rootLayerMediator;
-	},
-	getModel:function (cls) {
-		return game.Facade._modelMap.get(cls);
-	},	
 	//Switch scene
 	showScene:function (sceneMed) {
 		game.Facade._directorMediator.showScene(sceneMed);

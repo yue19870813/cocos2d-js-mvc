@@ -5,7 +5,7 @@
 *  @date   2010-04-26
 *  @email  tuhaitao@foxmail.com
 *	
-*  @modify by yuebinbin
+*  @modify by ituuz
 *  @date 2015-6-26
 *  @des To case extend cc.Class
 */
