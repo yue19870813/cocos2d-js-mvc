@@ -1,0 +1,12 @@
+{
+    "packageUrl" : "http://42.62.49.122:8080/res",
+    "remoteManifestUrl" : "http://42.62.49.122:8080/res/project.manifest",
+    "remoteVersionUrl" : "http://42.62.49.122:8080/res/version.manifest",
+    "version" : "1.0.0",
+    "groupVersions" : {
+        "1" : "1.0.0"
+    },
+    "engineVersion" : "3.1",
+    "searchPaths" : [
+    ]
+}
