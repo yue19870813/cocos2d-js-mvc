@@ -27,7 +27,7 @@ game.Notification.subscrib = function (type, callback, target) {
 	var isExist = game.Notification.callbackList.contains(type);
 	if (isExist) {
 		var arr = game.Notification.callbackList.get(type);
-		arr.push(callback);
+		arr.push([callback, target]);
 	} else {
 		var arr = new Array();
 		arr.push([callback, target]);
@@ -42,7 +42,7 @@ game.Notification.unsubscrib = function (type, callback) {
 	if (isExist) {
 		var arr = game.Notification.callbackList.get(type);
 		for (var i = 0; i < arr.length; i++) {
-			if (arr[i] == callback) {
+			if (arr[i][0] == callback) {
 				arr.splice(i, 1);
 				return true;
 			}
