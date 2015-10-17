@@ -34,12 +34,12 @@ game.SocketManager.init = function(addr, errorCallback) {
 }
 
 //Register the server callback.
-game.SocketManager.register = function (pid, callback) {
+game.SocketManager.register = function (pid, callback, target) {
 	if (game.SocketManager._isInit == false) {
 		game.log("SocketManager doesn't init!");
 		return;
 	}
-	game.SocketManager._callbackMap.put(pid, callback);
+	game.SocketManager._callbackMap.put(pid, [callback, target]);
 }
 
 //Remove the specified protocol register. 
@@ -104,9 +104,10 @@ game.SocketManager.prase = function(msg) {
 	var arr = JSON.parse(msg);
 	for (var i = 0; i < arr.length; i++) {
 		var pid = arr[i].pid;
-		var call = game.SocketManager._callbackMap.get(pid);
-		if (call != undefined && call != null) {
-			call(arr[i]); //send to register
+		var param = game.SocketManager._callbackMap.get(pid);
+		if (param != undefined && param != null) {
+			var call = param[0];
+			call(arr[i], param[1]); //send to register
 		}
 	}
 }
