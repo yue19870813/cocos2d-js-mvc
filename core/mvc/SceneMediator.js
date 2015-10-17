@@ -34,7 +34,10 @@ game.SceneMediator = game.IMediator.extend({
 	//Open the new layer and destroy previous  layer.
 	showLayer:function (layerMed, obj) {
 		this.currLayerMediator = layerMed;
-		this.layerMediatorList = new game.Stack();
+		while (this.layerMediatorList.size() > 0) {
+				var med = this.layerMediatorList.pop();
+				med._pDispose();
+		}
 		this.layerMediatorList.push(layerMed);
 		this.show(obj);
 	},
